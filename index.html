@@ -10,16 +10,25 @@
 </head>
 <body>
     <header>
-            <img src="./images/ghibli-logo.png" width="180">
-        <h1 class='header-text'>Ghibli Review App</h1>
+         <img src="./images/ghibli-logo.png" height="125" align="left"/>
+         <h1>Ghibli Review App</h1>   
     </header>
-    <select  class='dropdown'></select> 
-    <section id='display-info'></section>  
+    <br>
+    <section class='dropdown-section'>
+        <select  class='dropdown'></select>
+    </section>
+    <section id='display-info'>
+        <h3 id='title'></h3>
+        <p id="year"></p>
+        <p id="description"></p>
+    </section> 
+    <main>
     <form>
         <label for='review'>Your Review</label>
-        <input type='text' name='review' placeholder='Write your review here'/>
+        <input type='text' name='review'/>
         <input type='submit' name='submit-review' value='Submit Review'/>
     </form>
     <ul></ul>
+    </main> 
 </body>
 </html>

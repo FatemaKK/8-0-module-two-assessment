@@ -8,6 +8,19 @@ fetch("https://ghibliapi.herokuapp.com/films")
         option.value = movie.title;
         option.textContent = movie.title;
         dropdown.append(option);
+    })
+    let movieTitle = document.querySelector("#title");
+    let year = document.querySelector("#year");
+    let description = document.querySelector("#description");
+
+    dropdown.addEventListener("change", (event) => {
+        event.preventDefault();
+        movies.forEach((movie) => {
+            if(dropdown.value === movie.title){
+                movieTitle.textContent = movie.title;
+                year.textContent = movie.release_date;
+                description.textContent = movie.description;
+            }
+        });
     });
-    
 });
