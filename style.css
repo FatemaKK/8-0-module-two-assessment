@@ -14,8 +14,6 @@ header {
     width: 75%;
     height: 140px;
     background-color: skyblue;
-    /* font-family: monospace; */
-    /* color: white; */
     padding: 10px;
     margin: auto;
 }
@@ -29,7 +27,10 @@ h1 {
 }
 
 #display-info {
-    /* font-family: monospace; */
+    text-align: left;
+}
+
+li {
     text-align: left;
 }
 

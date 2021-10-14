@@ -33,7 +33,7 @@ fetch("https://ghibliapi.herokuapp.com/films")
         let list = document.createElement("li");
         let input = event.target.review.value;
         if(input.length === 0){
-          pError.textContent = "Please share your thoughts on the movie"
+          pError.textContent = "Please share your thoughts on the movie ..."
         } else { (input.textContent === "")
             document.querySelectorAll(".error").forEach((error) => {
                 error.remove()
