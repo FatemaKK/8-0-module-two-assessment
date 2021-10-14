@@ -8,6 +8,7 @@ fetch("https://ghibliapi.herokuapp.com/films")
         option.textContent = movie.title;
         dropdown.append(option);
     })
+
     let movieTitle = document.querySelector("#title");
     let year = document.querySelector("#year");
     let description = document.querySelector("#description");
@@ -23,8 +24,7 @@ fetch("https://ghibliapi.herokuapp.com/films")
         });
     });
 
-    let form = 
-    document.querySelector("form");  
+    let form = document.querySelector("form");  
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -38,9 +38,9 @@ fetch("https://ghibliapi.herokuapp.com/films")
             document.querySelectorAll(".error").forEach((error) => {
                 error.remove()
             }) 
-          list.textContent = input;
+          list.innerHTML = `<strong>${dropdown.value}:</strong> ${input}`;
           reviewDisplay.append(list);
-        }
+        };
         event.target.reset();
     });   
 });
