@@ -1,7 +1,6 @@
 fetch("https://ghibliapi.herokuapp.com/films")
 .then((response) => response.json())
 .then((movies) => {
-    console.log(movies)
     let dropdown = document.querySelector(".dropdown");
     movies.forEach((movie) => {
         const option = document.createElement("option");
@@ -20,7 +19,28 @@ fetch("https://ghibliapi.herokuapp.com/films")
                 movieTitle.textContent = movie.title;
                 year.textContent = movie.release_date;
                 description.textContent = movie.description;
-            }
+            }    
         });
     });
+
+    let form = 
+    document.querySelector("form");  
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let reviewDisplay = document.querySelector("ul");
+        let pError = document.querySelector(".error")
+        let list = document.createElement("li");
+        let input = event.target.review.value;
+        if(input.length === 0){
+          pError.textContent = "Please share your thoughts on the movie"
+        } else { (input.textContent === "")
+            document.querySelectorAll(".error").forEach((error) => {
+                error.remove()
+            }) 
+          list.textContent = input;
+          reviewDisplay.append(list);
+        }
+        event.target.reset();
+    });   
 });
